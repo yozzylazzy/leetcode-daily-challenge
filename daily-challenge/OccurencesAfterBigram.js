@@ -13,8 +13,11 @@ var findOcurrences = function(text, first, second) {
   for(let i = 0; i <= words.length; i++){
       // matching with the first and second 
       if(words[i] === first && words[i+1] === second){
-          // if the first and second same, push the third words
-          occur.push(words[i+2])
+          // safety validation if last text is undefined
+          if(words[i+2] !== undefined){
+              // if the first and second same, push the third words
+              occur.push(words[i+2])
+          }
       }
   }
   return occur;
